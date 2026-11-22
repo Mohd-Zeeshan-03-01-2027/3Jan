@@ -6,11 +6,10 @@ for(let i=0;i<9;i++){g.save();g.translate(S*.5,S*.5);g.rotate(i*.7+.3);g.fillSty
 function soft(c){const s=document.createElement('canvas');s.width=s.height=34;s.getContext('2d').drawImage(c,0,0,34,34);return s.toDataURL()}
 function mg(n){const c=document.createElement('canvas');c.width=30;c.height=n*15+16;const g=c.getContext('2d');g.strokeStyle='#a8741c';g.beginPath();g.moveTo(15,0);g.lineTo(15,c.height);g.stroke();for(let i=0;i<n;i++){const y=12+i*15,q=g.createRadialGradient(15,y,1,15,y,8);q.addColorStop(0,'#ffd45a');q.addColorStop(1,'#f08a12');g.fillStyle=q;g.strokeStyle='#d97a0c';g.beginPath();g.arc(15,y,8,0,7);g.fill();g.stroke()}return c.toDataURL()}
 const P1=[['#6d45a8','#b99be6'],['#e9798f','#ffc6d2'],['#e9dccb','#fffaf2']],P2=[P1[1],P1[0],P1[2]],A=bq(360,P1),B=bq(360,P2);
-const IM={a:A.toDataURL(),b:B.toDataURL(),sa:soft(A),sb:soft(B),m3:mg(3),m4:mg(4),m5:mg(5)};
+const IM={a:'assets/flower-tl.png',b:'assets/flower-br.png',sa:'assets/flower-tl.png',sb:'assets/flower-br.png'};
 $$('[data-i]').forEach(e=>e.src=IM[e.dataset.i]);
 $('.abg').style.backgroundImage=`url(${BG})`;
-const mgs=[[5,3],[20,5],[38,4],[58,3],[76,5],[93,4]];
-$('#fx').insertAdjacentHTML('beforeend',mgs.map(m=>`<div class="mg" style="left:${m[0]}%"><img src="${IM['m'+m[1]]}" alt="" style="animation-delay:-${m[0]/20}s"></div>`).join(''));
+
 $('.card').insertAdjacentHTML('beforeend',Array.from({length:14},()=>`<span class="sk" style="left:${Math.random()*92}%;top:${Math.random()*94}%;font-size:${8+Math.random()*9|0}px;animation-delay:-${Math.random()*2.4}s">✦</span>`).join(''));
 const au=new Audio(MP3);au.loop=true;au.preload='auto';au.volume=0;
 const MAP='https://maps.app.goo.gl/xVW2nznj2i73o6DZ8?g_st=ic',ADDR='Chaudhary Guest House, Arazibagh, Azamgarh';
@@ -40,8 +39,8 @@ cd();setInterval(()=>{if($('.sd').classList.contains('on'))cd()},1000);
 /* observers & parallax */
 const io=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;t.classList.toggle('on',e.isIntersecting);if(e.isIntersecting&&!t.classList.contains('p1'))t.classList.add('go')}),{threshold:.1});
 $$('.sec').forEach(s=>io.observe(s));
-const fa=$('.fa.a'),fb=$('.fa.b'),ms=$$('.mg');let ly=0,tk=0,idle=0;
-addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(()=>{tk=0;const y=scrollY,v=y-ly;ly=y;fa.style.transform=`translate3d(0,${-y*.06}px,0)`;fb.style.transform=`translate3d(0,${y*.05}px,0)`;const a=Math.max(-16,Math.min(16,v*.6));ms.forEach((m,i)=>m.style.transform=`rotate(${a*(.6+i*.15)}deg)`);clearTimeout(idle);idle=setTimeout(()=>ms.forEach(m=>m.style.transform=''),120)})}},{passive:true});
+const fa=$('.fa.a'),fb=$('.fa.b');let ly=0,tk=0,idle=0;
+addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(()=>{tk=0;const y=scrollY,v=y-ly;ly=y;fa.style.transform=`translate3d(0,${-y*.06}px,0)`;fb.style.transform=`translate3d(0,${y*.05}px,0)`;clearTimeout(idle)})}},{passive:true});
 /* opening */
 function typeIt(el){el.textContent='';[...el.dataset.t].forEach((c,i)=>{const s=document.createElement('span');s.className='L';s.textContent=c==' '?'\u00a0':c;s.style.animationDelay=i*65+'ms';el.appendChild(s)})}
 let opened=0;

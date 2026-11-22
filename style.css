@@ -89,3 +89,24 @@ body.lock{overflow:hidden}
 .ad{margin:14px 0;font-size:13px}.btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .cl{padding:16svh 8vw calc(12svh + env(safe-area-inset-bottom,0px))}.cl h2{font-size:30px;color:var(--w);line-height:1.3}
 #ts{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--w);color:#f6e7bd;padding:10px 18px;border-radius:24px;font-size:12px;opacity:0;transition:.3s;z-index:70;pointer-events:none}#ts.on{opacity:1;transform:translate(-50%,0)}
+/* Refined botanical invitation styling */
+body{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.45}
+.pf,h2{font-family:'Cormorant Garamond',serif;font-weight:600}
+.tg,.bt,.cd,.so,.iv{font-family:'Cormorant Garamond',serif;letter-spacing:.08em}
+.nm{font-family:'Great Vibes',cursive;font-style:normal;font-weight:400;font-size:clamp(42px,13vw,58px);line-height:1.05}
+.ar{font-family:Amiri,serif}
+.cf{gap:12px}
+.cover-bism{position:relative;z-index:2;color:#f3dfad;font-size:clamp(17px,5vw,22px);line-height:1.7;padding:0 10px;text-shadow:0 1px 8px rgba(0,0,0,.18)}
+.cf b{font-family:'Great Vibes',cursive;font-size:clamp(23px,7vw,31px);font-weight:400}
+.cf small{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.28em}
+.rb{width:72vw;max-width:310px;opacity:.95}
+.rf{width:92vw;max-width:390px;opacity:.95}
+.fa img{width:53vw;max-width:245px}
+.fa.a{left:-10vw;top:-4vw}
+.fa.b{right:-10vw;bottom:-4vw}
+.arch{border-radius:230px 230px 16px 16px;background:rgba(255,250,244,.48);border-color:#b99a66}
+.arch:before{background:linear-gradient(rgba(255,250,245,.52),rgba(255,247,239,.68))}
+.nm{color:#6e3447}
+.end-dua{font-size:clamp(25px,7vw,32px);color:var(--w);margin-top:30px;line-height:1.7}
+.mg{display:none!important}
+@media(min-width:600px){.fa img{width:230px}}
