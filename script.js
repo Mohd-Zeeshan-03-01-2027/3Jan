@@ -8,7 +8,8 @@ function mg(n){const c=document.createElement('canvas');c.width=30;c.height=n*15
 $('.abg').style.backgroundImage=`url(${BG})`;
 
 
-const au=new Audio(MP3);au.loop=true;au.preload='auto';au.volume=0;
+const au=new Audio(MP3);au.loop=false;au.preload='auto';au.volume=0;let songStopTimer=0;
+document.addEventListener('visibilitychange',()=>{if(document.hidden)au.pause()});window.addEventListener('pagehide',()=>au.pause());
 const MAP='https://maps.app.goo.gl/xVW2nznj2i73o6DZ8?g_st=ic',ADDR='Chaudhary Guest House, Arazibagh, Azamgarh';
 $('#mp').href=MAP;$('#dir').href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(ADDR);
 $('#cal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Daawat-e-Walima – Zeeshan & Ayesha')+'&dates=20270103T133000Z/20270103T163000Z&location='+encodeURIComponent(ADDR);
@@ -38,11 +39,10 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;t.classLis
 $$('.sec').forEach(s=>io.observe(s));
 
 /* opening */
-function typeIt(el){el.textContent='';[...el.dataset.t].forEach((c,i)=>{const s=document.createElement('span');s.className='L';s.textContent=c==' '?'\u00a0':c;s.style.animationDelay=i*65+'ms';el.appendChild(s)})}
 let opened=0;
-function open(){if(opened)return;opened=1;const st=$('#st');st.classList.add('open');au.play().catch(()=>{});let v=0;const iv=setInterval(()=>{v=Math.min(.55,v+.02);au.volume=v;if(v>=.55)clearInterval(iv)},120);
+function open(){if(opened)return;opened=1;const st=$('#st');st.classList.add('open');au.play().catch(()=>{});clearTimeout(songStopTimer);songStopTimer=setTimeout(()=>{au.pause();try{au.currentTime=0}catch(e){}},45000);let v=0;const iv=setInterval(()=>{v=Math.min(.55,v+.02);au.volume=v;if(v>=.55)clearInterval(iv)},120);
 setTimeout(()=>burst('p'),700);setTimeout(()=>st.classList.add('zoom'),1100);
-setTimeout(()=>{$('#inv').classList.add('show');document.body.classList.remove('lock');scrollTo(0,0);st.classList.add('gone');$$('.p1 [data-at]').forEach(e=>setTimeout(()=>e.dataset.t?typeIt(e):e.classList.add('in'),+e.dataset.at))},2300);
+setTimeout(()=>{$('#inv').classList.add('show');document.body.classList.remove('lock');scrollTo(0,0);st.classList.add('gone');$$('.p1 [data-at]').forEach(e=>setTimeout(()=>e.classList.add('in'),+e.dataset.at))},2300);
 setTimeout(()=>st.remove(),3400)}
 $('#st').addEventListener('click',open);
 (async()=>{const imgs=[...$$('img')].map(i=>i.decode().catch(()=>0));

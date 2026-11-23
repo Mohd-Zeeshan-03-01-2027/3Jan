@@ -142,3 +142,36 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:url("assets/
 .card{background:rgba(112,67,95,.93);box-shadow:0 18px 40px rgba(80,55,70,.18),inset 0 0 0 1px #c5ad8e,inset 0 0 0 6px rgba(232,215,195,.24)}
 .end-dua{color:#68485f}
 @media(max-width:380px){.cover-content{gap:8px;padding:18px 13px}.cover-bism{font-size:17px}.cf b{font-size:23px}}
+
+/* Latest refinements */
+body:before{background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}
+#ld{background-size:cover!important;background-position:center!important}
+#st{background-size:cover!important;background-position:center!important}
+.abg{background-size:cover!important;background-position:center center!important;animation:none!important;transform:none!important}
+.arch:before{background:rgba(255,249,244,.60)}
+/* Darker, refined book cover with the supplied Arabic calligraphy artwork */
+.cf{background:linear-gradient(145deg,#513545 0%,#3e2939 58%,#2e202e 100%)!important;color:#f3dfad}
+.cf:before{border:1px solid rgba(220,188,128,.9)}
+.cf:after{border:1px solid rgba(232,211,160,.42)}
+.book-calligraphy{position:relative;z-index:2;display:block;width:70%;max-height:43%;object-fit:contain;margin:2px auto 5px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.22))}
+.cf b{color:#f5e6c9!important;text-shadow:0 2px 5px rgba(0,0,0,.35)!important;font-family:'Cormorant Garamond',serif!important;font-style:italic;font-size:clamp(24px,7vw,31px)!important}
+.cf small{color:#e5c995!important}
+.pg-calligraphy{width:72%;max-height:44%;object-fit:contain;margin:0 auto 6px;mix-blend-mode:multiply}
+.pg{gap:8px}
+.cover-content{gap:11px}
+/* One-line names and clear address lines */
+.nm{font-family:'Cormorant Garamond',serif!important;font-style:italic;font-weight:600!important;font-size:clamp(34px,9vw,46px)!important;line-height:1.08;white-space:nowrap;letter-spacing:-.025em}
+.addr{font-size:11px;line-height:1.2;color:#806b72;letter-spacing:.035em;margin-top:-.7svh}
+.so{line-height:1.25}
+.tg{letter-spacing:.12em}
+.p1 .tg{max-width:290px;line-height:1.45}
+/* Lantern puller */
+.tas i{display:none!important}
+.tas:before{height:37px;background:linear-gradient(90deg,transparent 42%,#b49a70 42% 58%,transparent 58%)}
+.lantern{position:absolute;top:29px;left:50%;transform:translateX(-50%);font-size:30px;line-height:1;filter:drop-shadow(0 2px 2px rgba(74,47,35,.25));animation:lantern-sway 2.4s ease-in-out infinite;transform-origin:50% -20px}
+@keyframes lantern-sway{0%,100%{rotate:-4deg}50%{rotate:4deg}}
+.tas.h .lantern{opacity:.4}
+.card{background:linear-gradient(145deg,#3e2939,#2e202e)!important}
+.cl{padding-top:12svh}
+.end-dua{margin:0 0 22px!important;color:#68485f;font-size:clamp(27px,8vw,35px)}
+@media(max-width:380px){.nm{font-size:clamp(31px,8.7vw,36px)!important}.addr{font-size:10px}.book-calligraphy{width:73%}}
