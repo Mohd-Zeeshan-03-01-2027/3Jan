@@ -175,3 +175,27 @@ body:before{background-size:cover;background-position:center center;background-r
 .cl{padding-top:12svh}
 .end-dua{margin:0 0 22px!important;color:#68485f;font-size:clamp(27px,8vw,35px)}
 @media(max-width:380px){.nm{font-size:clamp(31px,8.7vw,36px)!important}.addr{font-size:10px}.book-calligraphy{width:73%}}
+
+/* Version 4: simpler book, restrained calligraphy, fade transition and lantern handle */
+#st{background:linear-gradient(145deg,#f5e9e4 0%,#ead7d5 48%,#f7eee8 100%)!important}
+#st.fade-away{opacity:0;pointer-events:none;transition:opacity .95s ease}
+#st.zoom .scene{transform:none!important}
+.scene{transition:opacity .95s ease,transform .95s ease}
+#st.fade-away .scene{opacity:0}
+.cf{background:linear-gradient(145deg,#56394a 0%,#402b3b 58%,#302331 100%)!important}
+.cover-content{gap:9px!important;padding:15px 12px!important}
+.book-calligraphy{width:25%!important;max-height:19%!important;object-fit:contain;margin:0 auto 3px!important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
+.pg-calligraphy{display:none!important}
+.pg{background:linear-gradient(90deg,#eadccf 0%,#fbf5ec 18%,#f8f0e5 100%)!important}
+.nm{font-size:clamp(27px,7.2vw,35px)!important;line-height:1.05!important;white-space:nowrap!important;letter-spacing:-.035em!important;font-weight:600!important}
+.so{font-size:clamp(13px,3.7vw,15px)!important;line-height:1.25!important;letter-spacing:.025em!important}
+.so b{font-size:clamp(17px,4.7vw,20px)!important;font-weight:700!important;letter-spacing:.01em!important;color:#56394a!important}
+.addr{font-size:11px!important;line-height:1.2!important;margin-top:1px!important}
+.p1 .amp{font-size:19px!important;margin:1px 0!important}
+.p1 .tg{font-size:13px!important}
+/* The lantern itself is the graspable pull tab; its cord begins beneath it. */
+.tas{height:130px!important;width:52px!important;margin-left:-26px!important;top:14px!important;z-index:5}
+.tas:before{position:absolute;top:27px;left:50%;transform:translateX(-50%);height:43px!important;width:2px!important;background:linear-gradient(#b49a70,#8e704c)!important;z-index:0}
+.tas:after{inset:-4px -14px 0!important}
+.lantern{position:absolute!important;top:-3px!important;left:50%!important;z-index:3!important;transform:translateX(-50%)!important;font-size:32px!important;line-height:1!important;filter:drop-shadow(0 2px 2px rgba(74,47,35,.25));animation:lantern-sway 2.4s ease-in-out infinite;transform-origin:50% 0!important}
+.tas.h .lantern{opacity:.55}
