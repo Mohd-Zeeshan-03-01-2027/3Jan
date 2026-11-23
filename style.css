@@ -176,26 +176,30 @@ body:before{background-size:cover;background-position:center center;background-r
 .end-dua{margin:0 0 22px!important;color:#68485f;font-size:clamp(27px,8vw,35px)}
 @media(max-width:380px){.nm{font-size:clamp(31px,8.7vw,36px)!important}.addr{font-size:10px}.book-calligraphy{width:73%}}
 
-/* Version 4: simpler book, restrained calligraphy, fade transition and lantern handle */
-#st{background:linear-gradient(145deg,#f5e9e4 0%,#ead7d5 48%,#f7eee8 100%)!important}
-#st.fade-away{opacity:0;pointer-events:none;transition:opacity .95s ease}
-#st.zoom .scene{transform:none!important}
-.scene{transition:opacity .95s ease,transform .95s ease}
-#st.fade-away .scene{opacity:0}
-.cf{background:linear-gradient(145deg,#56394a 0%,#402b3b 58%,#302331 100%)!important}
-.cover-content{gap:9px!important;padding:15px 12px!important}
-.book-calligraphy{width:25%!important;max-height:19%!important;object-fit:contain;margin:0 auto 3px!important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
+/* Book intro: plain solid-color stationery; floral artwork stays on the site background */
+#st{background:linear-gradient(145deg,#f7eee8 0%,#eee0e3 52%,#e7d9e5 100%)!important}
+.pg{background:linear-gradient(105deg,#f5e8dc 0%,#fffaf4 48%,#eadfe7 100%)!important}
 .pg-calligraphy{display:none!important}
-.pg{background:linear-gradient(90deg,#eadccf 0%,#fbf5ec 18%,#f8f0e5 100%)!important}
-.nm{font-size:clamp(27px,7.2vw,35px)!important;line-height:1.05!important;white-space:nowrap!important;letter-spacing:-.035em!important;font-weight:600!important}
-.so{font-size:clamp(13px,3.7vw,15px)!important;line-height:1.25!important;letter-spacing:.025em!important}
-.so b{font-size:clamp(17px,4.7vw,20px)!important;font-weight:700!important;letter-spacing:.01em!important;color:#56394a!important}
-.addr{font-size:11px!important;line-height:1.2!important;margin-top:1px!important}
-.p1 .amp{font-size:19px!important;margin:1px 0!important}
-.p1 .tg{font-size:13px!important}
-/* The lantern itself is the graspable pull tab; its cord begins beneath it. */
-.tas{height:130px!important;width:52px!important;margin-left:-26px!important;top:14px!important;z-index:5}
-.tas:before{position:absolute;top:27px;left:50%;transform:translateX(-50%);height:43px!important;width:2px!important;background:linear-gradient(#b49a70,#8e704c)!important;z-index:0}
-.tas:after{inset:-4px -14px 0!important}
-.lantern{position:absolute!important;top:-3px!important;left:50%!important;z-index:3!important;transform:translateX(-50%)!important;font-size:32px!important;line-height:1!important;filter:drop-shadow(0 2px 2px rgba(74,47,35,.25));animation:lantern-sway 2.4s ease-in-out infinite;transform-origin:50% 0!important}
-.tas.h .lantern{opacity:.55}
+.book-calligraphy{width:52%!important;max-height:34%!important;height:auto;object-fit:contain;margin:0 auto 9px!important;flex:0 1 auto}
+.cover-content{gap:14px!important;padding:22px 18px!important}
+.cf{background:linear-gradient(145deg,#493344 0%,#392838 55%,#2c202e 100%)!important}
+.cf:before{inset:10px!important;border:1px solid rgba(225,192,133,.9)!important}
+.cf:after{inset:16px!important;border:1px solid rgba(225,192,133,.4)!important}
+/* Names fit on one line; father's names are more prominent */
+.nm{font-size:clamp(29px,7.8vw,37px)!important;line-height:1.12!important;white-space:nowrap!important;letter-spacing:-.035em!important}
+.so{font-size:14px!important;line-height:1.35!important}
+.so b{font-size:16px!important;font-weight:600!important;color:#68485f!important}
+.addr{font-size:11px!important;margin-top:0!important}
+/* Lantern is the grip at the top of the tassel; keep its cord, tassel and finger cue */
+.tas{height:160px!important}
+.tas:before{position:absolute!important;left:21px!important;top:34px!important;width:2px!important;height:23px!important;background:linear-gradient(#b49a70,#98744c)!important}
+.tas i{display:block!important;position:absolute!important;top:56px!important;left:11px!important;width:22px!important;height:55px!important;border-radius:48% 48% 9px 9px!important;background:repeating-linear-gradient(90deg,#c9a45c 0 2px,#8a2a3d 2px 4px)!important;box-shadow:0 2px 4px rgba(50,30,30,.18)}
+.tas i:before{display:block!important}
+.lantern{position:absolute!important;top:0!important;left:50%!important;transform:translateX(-50%)!important;font-size:29px!important;line-height:1!important;z-index:3;filter:drop-shadow(0 2px 2px rgba(74,47,35,.25))}
+.fg{display:block!important;position:absolute!important;top:112px!important;left:10px!important;font-size:25px!important;z-index:4;animation:pl 1.8s ease-in-out infinite!important}
+.tas.h .fg{opacity:0!important}
+.tas.h .lantern{opacity:.85!important}
+#st .scene{transition:opacity .8s ease,transform .8s ease}
+#st.zoom .scene{transform:scale(1.04)!important;opacity:0!important}
+#st.gone{opacity:0!important;transition:opacity .85s ease!important}
+@media(max-width:380px){.nm{font-size:clamp(27px,7.5vw,32px)!important}.so b{font-size:15px!important}.book-calligraphy{width:54%!important}}

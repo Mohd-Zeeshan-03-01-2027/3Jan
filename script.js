@@ -41,8 +41,8 @@ $$('.sec').forEach(s=>io.observe(s));
 /* opening */
 let opened=0;
 function open(){if(opened)return;opened=1;const st=$('#st');st.classList.add('open');au.play().catch(()=>{});clearTimeout(songStopTimer);songStopTimer=setTimeout(()=>{au.pause();try{au.currentTime=0}catch(e){}},45000);let v=0;const iv=setInterval(()=>{v=Math.min(.55,v+.02);au.volume=v;if(v>=.55)clearInterval(iv)},120);
-setTimeout(()=>burst('p'),700);setTimeout(()=>st.classList.add('fade-away'),1050);
-setTimeout(()=>{$('#inv').classList.add('show');document.body.classList.remove('lock');scrollTo(0,0);st.classList.add('gone');$$('.p1 [data-at]').forEach(e=>setTimeout(()=>e.classList.add('in'),+e.dataset.at))},2300);
+setTimeout(()=>burst('p'),700);setTimeout(()=>st.classList.add('zoom'),1650);
+setTimeout(()=>{$('#inv').classList.add('show');document.body.classList.remove('lock');scrollTo(0,0);st.classList.add('gone');$$('.p1 [data-at]').forEach(e=>setTimeout(()=>e.classList.add('in'),+e.dataset.at))},2450);
 setTimeout(()=>st.remove(),3400)}
 $('#st').addEventListener('click',open);
 (async()=>{const imgs=[...$$('img')].map(i=>i.decode().catch(()=>0));
